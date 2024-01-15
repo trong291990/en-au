@@ -82,7 +82,7 @@ export default {
           this.isPlaying = false
         } else {
           this.isPlaying = true
-          this.play(this.currentSongIndex)
+          this.audio.play()
         }
       } else if (e.code === 'ArrowRight') {
         this.next()
