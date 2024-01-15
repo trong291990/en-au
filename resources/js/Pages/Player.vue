@@ -51,10 +51,10 @@
         <div class="bg-teal-500 h-2 rounded-full w-1/2"></div>
       </div>
       <!-- Time Information -->
-      <div class="flex justify-between mt-2 text-sm text-gray-600">
-        <span>1:57</span>
-        <span>3:53</span>
-      </div>
+<!--      <div class="flex justify-between mt-2 text-sm text-gray-600">-->
+<!--        <span>1:57</span>-->
+<!--        <span>3:53</span>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
