@@ -1,0 +1,17 @@
+{
+  "resources/img/cover.jpg": {
+    "file": "assets/cover-IYS0JRSi.jpg",
+    "src": "resources/img/cover.jpg"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/cover-IYS0JRSi.jpg"
+    ],
+    "css": [
+      "assets/app-FHOWzpa7.css"
+    ],
+    "file": "assets/app-00kL0PEw.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
