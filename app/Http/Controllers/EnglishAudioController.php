@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 class EnglishAudioController extends Controller
@@ -15,30 +16,33 @@ class EnglishAudioController extends Controller
 
     public function getList()
     {
-        $result = [];
-        $folders = File::directories($this->baseDir);
-        $folderNames = [];
 
-        foreach ($folders as $folder) {
-            $folderNames[] = basename($folder);
-        }
+       return Cache::remember('playlist', 3600, function () {
+           $result = [];
+           $folders = File::directories($this->baseDir);
+           $folderNames = [];
 
-        natsort($folderNames);
+           foreach ($folders as $folder) {
+               $folderNames[] = basename($folder);
+           }
 
-        foreach ($folderNames as $folder) {
-            $files = File::files($this->baseDir . DIRECTORY_SEPARATOR . $folder);
-            $data = [
-                'name' => $folder,
-                'files' => []
-            ];
-            foreach ($files as $file) {
-                $fileName = $file->getFilename();
+           natsort($folderNames);
 
-                $data['files'][] = url('audio/' . $folder . '/' . $fileName);
-            }
-            $result[] = $data;
-        }
+           foreach ($folderNames as $folder) {
+               $files = File::files($this->baseDir . DIRECTORY_SEPARATOR . $folder);
+               $data = [
+                   'name' => $folder,
+                   'files' => []
+               ];
+               foreach ($files as $file) {
+                   $fileName = $file->getFilename();
 
-        return $result;
+                   $data['files'][] = url('audio/' . $folder . '/' . $fileName);
+               }
+               $result[] = $data;
+           }
+
+           return $result;
+       });
     }
 }
