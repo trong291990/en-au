@@ -4,6 +4,11 @@
   </div>
   <div class="bg-gray-100 px-4 pb-4 pt-2 flex justify-center items-center">
     <div class="bg-white p-8 rounded-lg shadow-md w-80">
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" v-model="autoPlay" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Auto play</span>
+      </label>
       <!-- Album Cover -->
       <img :src="cover" alt="" class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50">
       <!-- Song Title -->
@@ -71,6 +76,8 @@ export default {
       currentSongIndex: null,
       audio: new Audio(),
       isPlaying: false,
+      interval: null,
+      autoPlay: true
     }
   },
   created() {
@@ -107,6 +114,8 @@ export default {
     play(index) {
       if (index === undefined) {
         index = this.currentSongIndex
+      } else {
+        this.currentSongIndex = index
       }
       const file = this.list.files[index]
       if (file) {
@@ -116,6 +125,11 @@ export default {
         localStorage.setItem(slugify(this.list.name), index)
         this.audio.addEventListener('ended', () => {
           this.isPlaying = false
+          if (this.autoPlay && this.list.files.hasOwnProperty(this.currentSongIndex + 1 )) {
+            setTimeout(() => {
+              this.play(this.currentSongIndex + 1)
+            }, 10000)
+          }
         })
       }
     },
