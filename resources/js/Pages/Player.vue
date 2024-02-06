@@ -77,7 +77,7 @@ export default {
       audio: new Audio(),
       isPlaying: false,
       interval: null,
-      autoPlay: true
+      autoPlay: false
     }
   },
   created() {
