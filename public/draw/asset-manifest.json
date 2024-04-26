@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/draw/static/css/main.5b3c4f65.chunk.css",
+    "main.js": "/draw/static/js/main.42710ca1.chunk.js",
+    "main.js.map": "/draw/static/js/main.42710ca1.chunk.js.map",
+    "runtime-main.js": "/draw/static/js/runtime-main.1cc4842a.js",
+    "runtime-main.js.map": "/draw/static/js/runtime-main.1cc4842a.js.map",
+    "static/js/2.9d6001d4.chunk.js": "/draw/static/js/2.9d6001d4.chunk.js",
+    "static/js/2.9d6001d4.chunk.js.map": "/draw/static/js/2.9d6001d4.chunk.js.map",
+    "static/js/3.4f7d63f6.chunk.js": "/draw/static/js/3.4f7d63f6.chunk.js",
+    "static/js/3.4f7d63f6.chunk.js.map": "/draw/static/js/3.4f7d63f6.chunk.js.map",
+    "index.html": "/draw/index.html",
+    "static/css/main.5b3c4f65.chunk.css.map": "/draw/static/css/main.5b3c4f65.chunk.css.map",
+    "static/js/2.9d6001d4.chunk.js.LICENSE.txt": "/draw/static/js/2.9d6001d4.chunk.js.LICENSE.txt",
+    "static/media/eraser.3d0e8325.svg": "/draw/static/media/eraser.3d0e8325.svg",
+    "static/media/lock-opened.67385b81.svg": "/draw/static/media/lock-opened.67385b81.svg",
+    "static/media/lock.b2135bcb.svg": "/draw/static/media/lock.b2135bcb.svg",
+    "static/media/squiggle.74714f23.svg": "/draw/static/media/squiggle.74714f23.svg",
+    "static/media/trash.75c947d6.svg": "/draw/static/media/trash.75c947d6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cc4842a.js",
+    "static/js/2.9d6001d4.chunk.js",
+    "static/css/main.5b3c4f65.chunk.css",
+    "static/js/main.42710ca1.chunk.js"
+  ]
+}
