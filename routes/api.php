@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/playlist', [\App\Http\Controllers\EnglishAudioController::class, 'getList']);
+
+Route::get('flashcard', [\App\Http\Controllers\NotionController::class, 'index']);

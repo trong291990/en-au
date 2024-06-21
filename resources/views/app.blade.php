@@ -9,7 +9,7 @@
     <link type="image/png" sizes="16x16" rel="icon" href="/favicon.png">
 </head>
 <body>
-<div id="app" class="w-full max-w-md mx-auto bg-gray-100 min-h-screen"></div>
+<div id="app" class="w-full mx-auto bg-gray-100 min-h-screen"></div>
 @vite('resources/js/app.js')
 </body>
 </html>

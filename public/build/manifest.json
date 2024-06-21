@@ -4,13 +4,10 @@
     "src": "resources/img/cover.jpg"
   },
   "resources/js/app.js": {
-    "assets": [
-      "assets/cover-IYS0JRSi.jpg"
-    ],
     "css": [
-      "assets/app-nzL5WEPJ.css"
+      "assets/app-6iwCmOUw.css"
     ],
-    "file": "assets/app-qSbW3lR3.js",
+    "file": "assets/app-H2yAMu3v.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
