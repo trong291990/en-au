@@ -15,7 +15,7 @@ import Flashcard from "./Pages/Flashcard.vue";
 
 export default {
   name: "App",
-  components: {Flashcard, Navigation},
+  components: {Flashcard},
   data() {
     return {
       words: [],
