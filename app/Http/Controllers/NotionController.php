@@ -67,6 +67,7 @@ class NotionController extends Controller
              ->database($databaseId)
              ->filterBy($filter)
              ->query()
-             ->asCollection();
+             ->asCollection()
+             ->shuffle();
     }
 }
