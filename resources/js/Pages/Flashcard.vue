@@ -112,16 +112,31 @@ export default {
 
       const utterance = new SpeechSynthesisUtterance(text);
 
-      // Optionally, set voice properties
+// Optionally, set voice properties
       utterance.rate = 0.8; // Speed of speech (0.1 to 10)
       utterance.pitch = 1; // Pitch (0 to 2)
       utterance.volume = 1; // Volume (0 to 1)
 
-      // Optionally, select a specific voice
-      const voices = window.speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        // Select the first voice, or customize selection logic as needed
-        utterance.voice = voices[0];
+// Optionally, select a specific voice
+      function setVoice() {
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+          // You can filter voices based on language, name, etc.
+          const selectedVoice = voices.find(voice => voice.lang === 'en-US'); // Select English (US) voice
+          if (selectedVoice) {
+            utterance.voice = selectedVoice;
+          } else {
+            // Fallback to the first voice if no specific voice found
+            utterance.voice = voices[0];
+          }
+        }
+      }
+
+     // Set voice when voices are loaded
+      if (window.speechSynthesis.getVoices().length > 0) {
+        setVoice();
+      } else {
+        window.speechSynthesis.onvoiceschanged = setVoice;
       }
 
       // Speak the text
