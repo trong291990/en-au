@@ -16,11 +16,11 @@ class NotionController extends Controller
         $this->notionClient = new Notion('secret_K2hmJUXXFROQeGZz0HYWojAuy1mrySKc4GXdVmLHQ4V');
     }
 
-    public function index(Request $request)
+    public function index($databaseId, Request $request)
     {
          $todayOnly = filter_var($request->get('today_only'), FILTER_VALIDATE_BOOLEAN);
          $today = date('Y-m-d');
-         $databaseId = '07b5a0a6a71d46be8dbbce3a71e35395';
+         //$databaseId = '07b5a0a6a71d46be8dbbce3a71e35395';
          if ($todayOnly) {
              $filter = Filter::rawFilter('Round 1', [
                  'date' => [

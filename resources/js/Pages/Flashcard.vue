@@ -9,9 +9,10 @@
       <div class="mt-2 mb-2 min-h-[96px]">
         <div v-show="showAnswer">
           <p><b>IAP: </b>{{ list[currentIndex]?.properties[0]?.plainText }}</p>
-          <p><b>English: </b>{{ list[currentIndex]?.properties[1]?.plainText }}</p>
+          <p><b>English: </b><label class="underline decoration-solid">{{ list[currentIndex]?.properties[1]?.plainText }}</label></p>
           <p><b>Type: </b>{{ list[currentIndex]?.properties[7]?.rawContent?.name }}</p>
-          <p><b>Gợi ý: </b>{{ list[currentIndex]?.properties[2]?.plainText }}</p>
+          <p><b>Gợi ý: </b><i>{{ list[currentIndex]?.properties[2]?.plainText }}</i></p>
+          <p><b>Ví dụ: </b>{{ list[currentIndex]?.properties[8]?.plainText }}</p>
         </div>
       </div>
       <!-- Music Controls -->
