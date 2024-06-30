@@ -57,13 +57,7 @@ export default {
     window.addEventListener('keydown', (e) => {
       console.log('key', e)
       if (e.code === 'Space') {
-        if (this.isPlaying) {
-          this.audio.pause()
-          this.isPlaying = false
-        } else {
-          this.isPlaying = true
-          this.audio.play()
-        }
+        this.play()
       } else if (e.code === 'ArrowRight') {
         this.next()
       } else if (e.code === 'ArrowLeft') {
@@ -89,13 +83,19 @@ export default {
     next() {
       if (this.list.hasOwnProperty(this.currentIndex + 1 )) {
         this.showAnswer = false;
-        this.currentIndex += 1;
+        if (this.currentIndex >= this.list.length - 1) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex += 1;
+        }
       }
     },
     prev() {
       if (this.list.hasOwnProperty(this.currentIndex - 1 )) {
         this.showAnswer = false;
         this.currentIndex -= 1;
+      } else {
+        this.currentIndex = this.list.length - 1;
       }
     },
     speak(text) {
