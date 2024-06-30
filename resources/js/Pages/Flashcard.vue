@@ -78,7 +78,12 @@ export default {
       }
     },
     remove(index) {
-      this.list.splice(index, 1)
+      this.list.splice(index, 1);
+      if (index === this.currentIndex) {
+        this.currentIndex = Math.min(this.currentIndex, this.list.length - 1);
+      } else if (index < this.currentIndex) {
+        this.currentIndex--;
+      }
     },
     next() {
       if (this.list.hasOwnProperty(this.currentIndex + 1 )) {
@@ -88,6 +93,8 @@ export default {
         } else {
           this.currentIndex += 1;
         }
+      } else {
+        this.currentIndex = 0;
       }
     },
     prev() {
